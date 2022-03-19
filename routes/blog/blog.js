@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var blogs = require('../../controller/blogController')
-
-
-/* GET home page. */
+// const jwt = require('express-jwt')
+// const SECRET_KEY = 'login2021'
+// /* GET home page. */
+// router.use(function(req, res) {
+//   jwt({secret: SECRET_KEY, algorithms: ['HS256']})
+// });
 router.get('/api/getArticle',blogs.getArticle);
 
 router.get('/api/getArticleById',blogs.getArticleById);
@@ -21,5 +24,6 @@ router.get('/api/searchArticle',blogs.searchArticle);
 router.get('/api/getNetWork',blogs.getNetWork)
 router.get('/api/getHttp1',blogs.getHttp1);
 router.get('/api/getTcp',blogs.getTcp)
+
 
 module.exports = router;
