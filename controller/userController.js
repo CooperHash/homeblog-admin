@@ -9,7 +9,7 @@ saveUser = (req, res) => {
   const token = jwt.sign(
     { user: { name: params.username, password: params.userpassword } },
     SECRET_KEY,
-    { expiresIn: '30 days' }
+    { expiresIn: '29 days' }
   )
   console.log('🚀 → token', token)
   var callBack = (err) => {
