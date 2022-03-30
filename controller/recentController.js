@@ -1,6 +1,4 @@
 var dbConfig = require('../util/dbconfig');
-const jwt = require('jsonwebtoken')
-const SECRET_KEY = 'login2021'
 getAllRecent = (req, res) => {
   var sql = 'select content,time,ptime from recent';
   var sqlArr = [];
