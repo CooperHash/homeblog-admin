@@ -45,6 +45,24 @@ getCategory = (req, res) => {
   dbConfig.sqlConnect(sql, sqlArr, callback);
 }
 
+getTest = (req, res) => {
+  var sql = 'select cateName,category,cateImg from poem GROUP BY cateName,category,cateImg';
+  var sqlArr = [];
+  var callback = (err, data) => {
+    if (err) {
+      console.log('连接出错');
+      console.log(err);
+    } else {
+      return res.send({
+        'data': data,
+      })
+    }
+  }
+  dbConfig.sqlConnect(sql, sqlArr, callback);
+}
+
+
+
 module.exports = {
   getDetail,
   getCategory,
