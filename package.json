@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "pm2 start app.js"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.0.0",
