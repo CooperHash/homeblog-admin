@@ -1,7 +1,7 @@
 var dbConfig = require('../util/dbconfig');
 
 getBook = (req, res) => {
-  var sql = 'select id,image,name,author from books';
+  var sql = 'select id,image,name,author,info from books';
   var sqlArr = [];
   var callback = (err, data) => {
     if (err) {

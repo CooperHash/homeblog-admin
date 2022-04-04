@@ -9,6 +9,7 @@ const recentRouter = require('./routes/recent/recent')
 const bookRouter = require('./routes/books/books')
 const userRouter = require('./routes/user/user')
 const poemRouter = require('./routes/poem/poem')
+const kpopRouter = require('./routes/kpop/kpop')
 
 // 进行解密
 // var jwt = require('express-jwt');
@@ -32,6 +33,7 @@ app.use('/all/recent', recentRouter);
 app.use('/all/book',bookRouter);
 app.use('/all/user',userRouter);
 app.use('/all/poem',poemRouter);
+app.use('/all/kpop', kpopRouter);
 
 // 设置响应头
 app.all('*', function(req, res, next) {
