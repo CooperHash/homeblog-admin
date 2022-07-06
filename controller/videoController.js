@@ -1,7 +1,7 @@
 var dbConfig = require('../util/dbconfig');
 
 getAllVideo = (req, res) => {
-  var sql = 'select vid,vurl,vimage,vtype from video';
+  var sql = 'select vid,vurl,vimage,vtype,vname from video'
   var sqlArr = [];
   var callback = (err, data) => {
     if (err) {
