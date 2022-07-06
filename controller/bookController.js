@@ -106,23 +106,40 @@ getBookDetailByName = (req, res) => {
   dbConfig.sqlConnect(sql, sqlArr, callback);
 }
 
-
 saveBookDetail = (req, res) => {
   var params = req.body
-  var sql = 'insert into books_detail(person, info, detail , time) values (?,?,?,?)';
-  var sqlArr = [params.belong_id, params.single_id, params.content, params.time];
+  var sql = 'insert into books_detail(person, detail, belong_id) values (?,?,?)';
+  var sqlArr = [params.person, params.detail, params.belong_id];
   var callBack = (err) => {
-    if (err) {
+    if(err) {
       console.log('连接出错');
       console.log(err);
     } else {
       return res.send(
-        { 'msg': 'sccess' }
+        {'msg': 'sccess'}
       );
     }
   }
+
+  dbConfig.sqlConnect(sql, sqlArr, callBack);
 }
 
+
+// saveBookDetail = (req, res) => {
+//   var params = req.body
+//   var sql = 'insert into books_detail(person, info, detail , time) values (?,?,?,?)';
+//   var sqlArr = [params.belong_id, params.single_id, params.content, params.time];
+//   var callBack = (err) => {
+//     if (err) {
+//       console.log('连接出错');
+//       console.log(err);
+//     } else {
+//       return res.send(
+//         { 'msg': 'sccess' }
+//       );
+//     }
+//   }
+// }
 
 
 module.exports = {
@@ -130,6 +147,7 @@ module.exports = {
   countBook,
   getBookByPage,
   getEnjoy,
+  saveBookDetail,
   getBookInfoById,
   getBookDetailById,
   getBookDetailByName

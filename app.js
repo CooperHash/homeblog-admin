@@ -10,6 +10,7 @@ const bookRouter = require('./routes/books/books')
 const userRouter = require('./routes/user/user')
 const poemRouter = require('./routes/poem/poem')
 const kpopRouter = require('./routes/kpop/kpop')
+const videoRouter = require('./routes/video/video')
 
 // 进行解密
 // var jwt = require('express-jwt');
@@ -34,10 +35,11 @@ app.use('/all/book',bookRouter);
 app.use('/all/user',userRouter);
 app.use('/all/poem',poemRouter);
 app.use('/all/kpop', kpopRouter);
+app.use('/all/video',videoRouter)
 
 // 设置响应头
 app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000/");
   res.header("Access-Control-Allow-Headers", "X-Requested-With,Authorization,Origin");
   res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
 });
