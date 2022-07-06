@@ -27,7 +27,7 @@ getVideo = (req, res) => {
       console.log(err);
     } else {
       return res.send(
-        {'data': data}
+        data
       );
     }
   }
