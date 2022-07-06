@@ -17,5 +17,5 @@ getAllVideo = (req, res) => {
 }
 
 module.exports = {
-  getAllVideo
+  getAllVideo,
 }

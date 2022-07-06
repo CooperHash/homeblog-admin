@@ -35,7 +35,7 @@ app.use('/all/book',bookRouter);
 app.use('/all/user',userRouter);
 app.use('/all/poem',poemRouter);
 app.use('/all/kpop', kpopRouter);
-app.use('/all/video',videoRouter);
+app.use('/all/video',videoRouter)
 
 // 设置响应头
 app.all('*', function(req, res, next) {
