@@ -3,6 +3,7 @@ var router = express.Router();
 var books = require('../../controller/bookController');
 
 router.get('/api/getBook', books.getBook);
+router.post('/api/saveBookDetail',books.saveBookDetail)
 router.get('/api/countBook', books.countBook);
 router.get('/api/getBookByPage', books.getBookByPage);
 router.get('/api/getEnjoy', books.getEnjoy);

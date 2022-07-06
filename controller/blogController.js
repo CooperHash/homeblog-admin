@@ -34,7 +34,7 @@ getNetWork = (req, res) => {
 
 getArticleById = (req, res) => {
   let {id} = req.query
-  var sql = 'select content from Article where id=?';
+  var sql = 'select title,content from Article where id=?';
   var sqlArr = [id];
   var callback = (err, data) => {
     if(err) {
