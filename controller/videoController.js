@@ -19,7 +19,7 @@ getAllVideo = (req, res) => {
 
 getVideo = (req, res) => {
   let {vload} = req.query
-  var sql = 'select title,content from Article where vload=?';
+  var sql = 'select vname,vurl from video where vload=?';
   var sqlArr = [id];
   var callback = (err, data) => {
     if(err) {
