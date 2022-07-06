@@ -20,7 +20,7 @@ getAllVideo = (req, res) => {
 getVideo = (req, res) => {
   let {vload} = req.query
   var sql = 'select vname,vurl from video where vload=?';
-  var sqlArr = [id];
+  var sqlArr = [vload];
   var callback = (err, data) => {
     if(err) {
       console.log('连接出错');
